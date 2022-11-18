@@ -1,6 +1,6 @@
 <ion-header [translucent]="true">
   <ion-toolbar>
-    <ion-title> Inicio </ion-title>
+    <ion-title> Agelio </ion-title>
   </ion-toolbar>
 </ion-header>
 
@@ -11,7 +11,7 @@
     </ion-toolbar>
   </ion-header>
 
-  <ion-card *ngFor="let card of model">
+  <ion-card *ngFor="let card of model" button="true" (click)="openLink()">
     <ion-card-header>
       <ion-card-subtitle>{{card.category}}</ion-card-subtitle>
       <ion-card-title>{{card.title}}</ion-card-title>
@@ -20,4 +20,15 @@
       <ion-img [src]="card.image"></ion-img>
     </ion-card-content>
   </ion-card>
+
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button>
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+    <ion-fab-list side="top">
+      <ion-fab-button (click)="openLink()">
+        <ion-icon name="accessibility-outline"></ion-icon>
+      </ion-fab-button>
+    </ion-fab-list>
+  </ion-fab>
 </ion-content>
